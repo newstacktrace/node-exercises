@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TODO List</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" ></script>
+    <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js" ></script>
+    <link rel="stylesheet" href="css/todo.css" />
+    <script type="text/javascript" src="js/todo.js"></script>
+</head>
+<body>
+<div class="page-content page-container" id="page-content">
+    <div class="padding">
+        <div class="row container d-flex justify-content-center">
+            <div class="col-md-12">
+                <div class="card px-3">
+                    <div class="card-body">
+                        <h4 class="card-title">Awesome Todo list</h4>
+                        <form id="todo-form" method="post">
+                            <div class="add-items d-flex">
+                                <input name="todo" id="todo" type="text" class="form-control todo-list-input"
+                                                                 placeholder="What do you need to do today?" />
+                                <button class="add btn btn-primary font-weight-bold todo-list-add-btn">Add</button>
+                            </div>
+                        </form>
+                        <div class="list-wrapper">
+                            <ul class="d-flex flex-column-reverse todo-list">
+                                <% for(var i=0; i<todoList.length; i++) {%>
+                                    <li>
+                                        <div class="form-check">
+                                            <%
+                                                var id = todoList[i].id;
+                                                var todo = todoList[i].todo;
+                                            %>
+                                            <label class="form-check-label" for="todo-item-<%= id %>">
+                                                <input class="checkbox" type="checkbox" id="todo-item-<%= id %>" />
+                                                <%= todo %>
+                                                <i class="input-helper"></i>
+                                            </label>
+                                        </div>
+                                        <i class="remove mdi mdi-close-circle-outline"></i>
+                                    </li>
+                                <% } %>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
