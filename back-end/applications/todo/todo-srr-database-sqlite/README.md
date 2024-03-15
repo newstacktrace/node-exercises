@@ -1,1 +1,1 @@
- Server Side Render
+# Server Side Rendering
